@@ -21,4 +21,13 @@ Lots of room for improvement here.
    pip install -r requirements.txt
    ```
 
+4. Run the code
+    ```
+    python vector_store.py
+    ```
+
+
 Make sure you have Python 3.9 or higher installed before proceeding with the installation steps.
+
+
+References: https://github.com/Maharshi-Pandya/smolvecstore
