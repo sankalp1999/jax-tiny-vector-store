@@ -28,7 +28,7 @@ def cosine_similarity(v1, v2):
 def get_topk_similar(store, query, k):
     scores = cosine_similarity(store, query)
     topk_values, topk_indices = lax.top_k(scores, k) # this is recommended
-    return topk_indices[::-1], topk_values[::-1]
+    return topk_indices, topk_values
 
 class Vectorstore:
     def __init__(self, docs: List[str], embedder: SentenceTransformer):
