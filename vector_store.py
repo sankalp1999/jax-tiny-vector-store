@@ -39,7 +39,7 @@ class Vectorstore:
     def search(self, query: str, k: int = 10):
         q_emb = self.embedder.encode(query)
         topk_indices, scores = self._search(q_emb, k)
-        return [self.docs[int(idx)] for idx in topk_indices], scores.tolist()  # Corrected indexing here
+        return [self.docs[int(idx)] for idx in topk_indices], scores.tolist() 
 
     @partial(jax.jit, static_argnums=(0, 2))
     def _search(self, query, k):
@@ -50,9 +50,7 @@ class Vectorstore:
         return f"Vectorstore(embedder={self.embedder})"
 
 
-# --------- Usage -----------
-
-print("Loading the embedding model...")
+# Usage
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L12-v2')
 
 docs = document.split('\n')
@@ -64,6 +62,6 @@ vs = Vectorstore(docs, embedder=model)
 query = "What did emma do in this story?"
 (topk_docs, scores), exectime = vs.search(query)
 
-print(f"\nMost similar documents: {list(topk_docs)}")
-print(f"Scores w.r.t query (higher is better): {list(scores)}")
+print(f"\nMost similar documents: {list(topk_docs)[0]}")
+print(f"Scores (higher is better): {list(scores)}")
 print(f"\nSearch time: {exectime} ms")
