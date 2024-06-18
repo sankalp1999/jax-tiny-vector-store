@@ -1,6 +1,7 @@
-TinyJax
+# TinyJax
 
-A small vector store written in jax to practice my jax learning skills
+A small vector store written in jax to practice my jax learning skills.
+Lots of room for improvement here.
 
 ## Installation
 
