@@ -51,6 +51,7 @@ class Vectorstore:
     def __repr__(self):
         return f"Vectorstore(embedder={self.embedder})"
 
+
 # Usage
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L12-v2')
 
